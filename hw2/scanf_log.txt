@@ -1,0 +1,4 @@
+scanf: 3
+     scanf("%c", &c);
+     scanf("%f", &f);
+     scanf("Testing if doesnt overwrite");
