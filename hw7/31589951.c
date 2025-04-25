@@ -7,6 +7,7 @@
 #define TRUE 1
 #define FALSE 0
 
+//Maria Palacios
 struct node {
         int tiles[N][N];
         int f, g, h;
