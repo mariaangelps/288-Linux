@@ -3,7 +3,8 @@
 #include <string.h>
 
 #define N 4
-#define NxN (N*N)
+// Total number of tiles
+#define NxN (N*N) 
 #define TRUE 1
 #define FALSE 0
 
@@ -15,6 +16,7 @@ struct node {
 	struct node *parent;			/* used to trace back the solution */
 };
 
+//arrays to store goal position of each tile for heuristic calculation
 int goal_rows[NxN];
 int goal_columns[NxN];
 struct node *start,*goal;
@@ -226,7 +228,7 @@ void expand(struct node *selected) {
 	}
 
 	int succ_index = 0;
-
+	//successors in priority order
 	for (int i = 0; i < 4; i++) {
 		switch(dirs[i]){
 			case 'u':
