@@ -366,7 +366,7 @@ int main(int argc,char **argv) {
                 iter++;
                 if(iter %1000 == 0)
                         printf("iter %d\n", iter);
-                if (iter == 1000) {
+                if (iter >= 1000) {
                         printf("No Solution!!.\n");
                         return 0;
                 }
