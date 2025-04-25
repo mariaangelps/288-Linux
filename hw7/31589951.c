@@ -367,8 +367,8 @@ int main(int argc,char **argv) {
 		iter++;
 		if(iter %1000 == 0)
 			printf("iter %d\n", iter);
-		if (iter == 3000) {
-			printf("Unsolvable.\n");
+		if (iter == 1000) {
+			printf("No solution!!.\n");
 			return 0;
 		}
 	
