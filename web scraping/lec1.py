@@ -6,7 +6,8 @@ url="https://www.google.com"
 #if we wanted to do post-> submit
 #requests.post(url)
 #request module, tenemos que hacer que sea stored en una var
-response=requests.get(url)
+#cambiar con actual password y username
+response=requests.get(url,authenticate="username":"user","pass":"password")
 print("Status code:",response.status_code)
 
 #print headers
@@ -25,10 +26,7 @@ print("byte code:", response.text)
 #abrimos y creamos un file llaado google.html
 #write in binary format ->wb stands for
 
-#f=open("google.html","wb")
-#f.write(response.content)
-#f.close()
-
 f=open("google.html","wb")
-f.write(response.text)
+f.write(response.content)
 f.close()
+
