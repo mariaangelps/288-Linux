@@ -12,8 +12,8 @@ sample page
 </head>
 <body>
 <p> Hola, esto si es nice, no me gusta c </p>
-<a href="google.com"> link</a>
-<a second link> </a>
+<a> href="google.com"> link</a>
+<a> second link</a>
 <h1> qst heading </h1>
 
 </body>
@@ -23,13 +23,14 @@ sample page
 #soup=BeautifulSoup(file,parsing technique)
 soup = BeautifulSoup(html_doc,"html.parser")
 
+print("\n")
 #to traverse head, get head tag
 tag = soup.html.head
-print(tag)
+print("Head tag: \n",tag)
 
 #replace all null values with empty str
 html_doc.replace("\n","")
-print("Head tag:",tag)
+print("Replace null values:",tag)
 print("\n")
 
 tag2=soup.html.head.title
@@ -38,7 +39,6 @@ print("\n")
 
 #what if we want to stract sample page 
 tag3=soup.html.head.title.string
-#tag3=soup.title.string
 print("Title tag:",tag3)
 
 print("\n")
