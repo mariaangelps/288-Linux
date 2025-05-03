@@ -4,16 +4,11 @@
 
 
 
-struct t_arg {
-    int *arr; // pointer to shared array
-    long length; // num elements in array
-    long nthreads; // total number of threads
-    long id; //  logical thread id
-};
-
 void *computation (void *id){
+    int *arr
         long *myid = args-> id;
-        struct t_arg * myargs = (struct t_arg *) args;
+        long id;
+        long nthreads;
         return NULL;
 }
 int main(int argc, char *argv[]){
