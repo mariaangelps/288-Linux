@@ -6,15 +6,29 @@ url="https://finance.yahoo.com/most-active"
 response=requests.get(url)
 print("Status code:",response.status_code)
 
-headers = {
-"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
-}
+#get data from html file
+with open("most_active.html", "r") as file:
+    html_file= file.read()
 
-response = requests.get(url, headers=headers)
-html=response
-soup=BeautifulSoup("html.parser")
-# establish the connection
-client = MongoClient()
+soup=BeautifulSoup(html_file,"html.parser")
 
-db=client["soup"]
+#1. queremos encontrar primero las columnas symbol, name, price,change and volume
+#to find debugging steps
+html_file.replace("\n","")
+#thead=soup.find('thead')
+tag_th = soup.find_all('th')
+t_body =soup.finall('tbody')
+#print(tag_th)
+for i in tag_th:
+    #strip to eliminate spaces
 
+    print(i.text,strip=True)
+for i in t_body:
+    #2. Extraer los datos de cada columna
+    print(i.contents)
+
+
+
+#client = MongoClient()
+
+#db=client["soup"]
