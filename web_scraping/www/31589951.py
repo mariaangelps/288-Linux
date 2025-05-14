@@ -26,6 +26,8 @@ while True:
 
     # Encontrar las filas de la tabla con los datos de las acciones
     rows = soup.find_all("tr", {"class": "row yf-1570k0a"})
+    print(rows)
+    """
     doc = []
 
     # Procesar cada fila para extraer los datos
@@ -48,3 +50,4 @@ while True:
     # Esperar 3 minutos antes de la siguiente actualización
     print("Waiting for 3 minutes before the next update...")
     time.sleep(180)
+"""

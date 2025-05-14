@@ -4,11 +4,11 @@ from bs4 import BeautifulSoup
 import time
 
 client = MongoClient()
-db=client["stock_data"]
+db=client["stock_data3"]
 collection = db["most_active_stocks"]
 
 while True:
-    """
+
     url="https://finance.yahoo.com/most-active"
     response=requests.get(url)
     print("Status code:",response.status_code)
@@ -18,11 +18,11 @@ while True:
     else:
         #get data from html file
 
-        """
-    with open("most_active.html", "r") as file:
-        html_file= file.read()
+        print("Failed to retrieve from URL, using local HTML file")
+        with open("most_active.html", "r") as file:
+                html_file = file.read()
+        soup = BeautifulSoup(html_file, "html.parser")
 
-    soup=BeautifulSoup(html_file,"html.parser")
 
     #1. queremos encontrar primero las columnas symbol, name, price,change and volume
     #to find debugging steps
